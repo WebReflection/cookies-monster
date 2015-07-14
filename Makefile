@@ -22,7 +22,6 @@ build:
 	make test
 	make hint
 	make size
-	rm build/$(REPO).max.js
 
 # build generic version
 var:
@@ -34,7 +33,7 @@ var:
 	cat template/copyright build/no-copy.$(REPO).js >build/$(REPO).js
 	rm build/no-copy.$(REPO).max.js
 	rm build/no-copy.$(REPO).js
-#	rm build/$(REPO).max.js
+	rm build/$(REPO).max.js
 #	rm build/$(REPO).max.css
 
 # build node.js version
@@ -66,13 +65,13 @@ duk:
 
 
 size:
-	wc -c build/$(REPO).max.js
+	wc -c src/$(REPO).js
 	gzip -c build/$(REPO).js | wc -c
 	gzip -c build/$(REPO).css | wc -c
 
 # hint built file
 hint:
-	node node_modules/jshint/bin/jshint build/$(REPO).max.js
+	node node_modules/jshint/bin/jshint src/$(REPO).js
 
 # clean/remove build folder
 clean:
