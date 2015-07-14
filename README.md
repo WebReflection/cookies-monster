@@ -35,6 +35,8 @@ It can be anything you want, as long as the container id is `cookies-monster`. Y
 
 By default, the element should contain the class `hidden` plus eventually others.
 
+**Please note** that if an element with class `.cookies-monster-accepted` is present, this will be used to set the  cookie once clicked.
+
 
 
 ### Compatibility
