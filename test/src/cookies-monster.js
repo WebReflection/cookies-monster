@@ -34,18 +34,18 @@
         if (a) {
           if (evt.type === CLICK) {
             evt.preventDefault();
+            d = new Date();
+            d.setFullYear(d.getFullYear() + 1);
+            document.cookie = ''.concat(
+              cookieName, '=1',
+              ';expires=', d.toGMTString(),
+              ';path=/',
+              ';domain=.', location.hostname,
+              location.protocol === 'https' ? ';secure' : ''
+            );
           }
           remove(a, CLICK, hide);
         }
-        d = new Date();
-        d.setFullYear(d.getFullYear() + 1);
-        document.cookie = ''.concat(
-          cookieName, '=1',
-          ';expires=', d.toGMTString(),
-          ';path=/',
-          ';domain=.', location.hostname,
-          location.protocol === 'https' ? ';secure' : ''
-        );
         el[CN] += ' ' + HIDDEN;
         st(drop, delay, el);
       }
