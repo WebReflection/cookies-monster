@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "name": "cookies-monster",
   "description": "",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git://github.com/WebReflection/cookies-monster.git"
   },
-  "main": "./build/cookies-monster.node.js",
+  "main": "./build/cookies-monster.js",
   "scripts": {
     "test": "phantomjs testrunner.js",
     "web": "IP=0.0.0.0 polpetta",
@@ -28,9 +28,7 @@
     "polpetta": "~0.3.x"
   },
   "devDependencies": {
-    "wru": "~0.2.x"
-  },
-  "dependencies": {
+    "wru": "~0.2.x",
     "uglifycss": "0.0.15"
   }
 }

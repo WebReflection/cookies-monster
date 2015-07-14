@@ -28,11 +28,13 @@ var:
 	mkdir -p build
 	cat template/var.before $(VAR) template/var.after >build/no-copy.$(REPO).max.js
 	node node_modules/uglify-js/bin/uglifyjs --verbose build/no-copy.$(REPO).max.js >build/no-copy.$(REPO).js
-	node ./node_modules/uglifycss/uglifycss src/cookies-monster.css > build/cookies-monster.css
+	node ./node_modules/uglifycss/uglifycss src/cookies-monster.css > build/no-copy.$(REPO).css
 	cat template/license.before LICENSE.txt template/license.after build/no-copy.$(REPO).max.js >build/$(REPO).max.js
 	cat template/copyright build/no-copy.$(REPO).js >build/$(REPO).js
+	cat template/copyright build/no-copy.$(REPO).css >build/$(REPO).css
 	rm build/no-copy.$(REPO).max.js
 	rm build/no-copy.$(REPO).js
+	rm build/no-copy.$(REPO).css
 	rm build/$(REPO).max.js
 #	rm build/$(REPO).max.css
 
