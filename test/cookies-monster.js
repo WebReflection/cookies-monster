@@ -5,7 +5,13 @@ wru.test([
   {
     name: 'visibility',
     test: function () {
-      document.cookie = 'cookies-monster-accepted=;expires=Thu, 01-Jan-1970 00:00:01 GMT';
+      document.cookie = ''.concat(
+        'cookies-monster-accepted=',
+        ';expires=Thu, 01-Jan-1970 00:00:01 GMT',
+        ';path=/',
+        ';domain=.', location.hostname,
+        location.protocol === 'https' ? ';secure' : ''
+      );
       setTimeout(wru.async(function () {
         var el = document.getElementById('cookies-monster');
         wru.assert(el.className.indexOf('hidden') <  0);
