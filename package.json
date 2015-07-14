@@ -1,10 +1,10 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "name": "cookies-monster",
   "description": "",
   "homepage": "https://github.com/WebReflection/cookies-monster",
-  "keywords": [],
+  "keywords": ["EU", "law", "cookie", "cookies"],
   "author": {
     "name": "Andrea Giammarchi",
     "web": "http://webreflection.blogspot.com/"
@@ -15,7 +15,7 @@
   },
   "main": "./build/cookies-monster.node.js",
   "scripts": {
-    "test": "node test/.test.js||phantomjs testrunner.js",
+    "test": "phantomjs testrunner.js",
     "web": "IP=0.0.0.0 polpetta",
     "install-global-dev": "node -e '(function(o){for(var k in o)require(\"child_process\").spawn(\"npm\",[\"install\",\"-g\",k+\"@\"+o[k]]).on(\"exit\",console.log.bind(console,k+\"@\"+o[k]));}(require(\"package.json\").globalDevDependencies))'"
   },
@@ -29,5 +29,8 @@
   },
   "devDependencies": {
     "wru": "~0.2.x"
+  },
+  "dependencies": {
+    "uglifycss": "0.0.15"
   }
 }

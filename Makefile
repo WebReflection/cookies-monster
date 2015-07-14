@@ -19,10 +19,8 @@ AMD = $(VAR)
 build:
 	make clean
 	make var
-	make node
-	make amd
 	make test
-#	make hint
+	make hint
 	make size
 
 # build generic version
@@ -30,6 +28,7 @@ var:
 	mkdir -p build
 	cat template/var.before $(VAR) template/var.after >build/no-copy.$(REPO).max.js
 	node node_modules/uglify-js/bin/uglifyjs --verbose build/no-copy.$(REPO).max.js >build/no-copy.$(REPO).js
+	node ./node_modules/uglifycss/uglifycss src/cookies-monster.css > build/cookies-monster.css
 	cat template/license.before LICENSE.txt template/license.after build/no-copy.$(REPO).max.js >build/$(REPO).max.js
 	cat template/copyright build/no-copy.$(REPO).js >build/$(REPO).js
 	rm build/no-copy.$(REPO).max.js
@@ -66,6 +65,7 @@ duk:
 size:
 	wc -c build/$(REPO).max.js
 	gzip -c build/$(REPO).js | wc -c
+	gzip -c build/$(REPO).css | wc -c
 
 # hint built file
 hint:
@@ -87,7 +87,7 @@ web:
 preview:
 	node_modules/markdown/bin/md2html.js README.md >README.md.htm
 	cat template/md.before README.md.htm template/md.after >README.md.html
-	open README.md.html
+	chromium README.md.html
 	sleep 3
 	rm README.md.htm README.md.html
 
