@@ -104,6 +104,7 @@ pages:
 	cp -rf build ~/tmp/$(REPO)
 	cp -rf test ~/tmp/$(REPO)
 	cp index.html ~/tmp/$(REPO)
+	cp test.html ~/tmp/$(REPO)
 	git checkout gh-pages
 	cp ~/tmp/.gitignore ./
 	mkdir -p test
