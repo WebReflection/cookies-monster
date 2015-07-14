@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Cookies-monster : The pointless EU law simplified">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cookies-monster</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/WebReflection/cookies-monster">View on GitHub</a>
+
+          <h1 id="project_title">Cookies-monster</h1>
+          <h2 id="project_tagline">The pointless EU law simplified</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/WebReflection/cookies-monster/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/WebReflection/cookies-monster/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="cookies-monster" class="anchor" href="#cookies-monster" aria-hidden="true"><span class="octicon octicon-link"></span></a>cookies-monster</h1>
+
+<p><a href="http://travis-ci.org/WebReflection/cookies-monster"><img src="https://secure.travis-ci.org/WebReflection/cookies-monster.png" alt="build status"></a></p>
+
+<h1>
+<a id="simplified-html-css-and-js-for-every-taste" class="anchor" href="#simplified-html-css-and-js-for-every-taste" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simplified HTML, CSS and JS for every taste.</h1>
+
+<h3>
+<a id="the-js-part" class="anchor" href="#the-js-part" aria-hidden="true"><span class="octicon octicon-link"></span></a>The JS part</h3>
+
+<p>Whenever a user scrolls, or click <code>Accept</code>, the banner disappears for a year and for the whole domain.</p>
+
+<p>The script is compatible with every Mobile and Desktop browser.
+Only caveat is: if you want to support IE9 and eventually IE8 too, use this comment on top of your page header.</p>
+
+<div class="highlight highlight-html"><pre><span class="pl-c">&lt;!--[if lte IE 9]&gt;&lt;style&gt;label{display:block !important;}&lt;/style&gt;&lt;script&gt;(function(f){window.setTimeout=f(window.setTimeout);window.setInterval=f(window.setInterval)})(function(f){return function(c,t){var a=[].slice.call(arguments,2);return f(function(){c.apply(this,a)},t)}});&lt;/script&gt;&lt;![endif]--&gt;</span>
+<span class="pl-c">&lt;!--[if IE 8]&gt;&lt;script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;</span></pre></div>
+
+<p>After that you can include the script either deferred or async or however you like.</p>
+
+<h3>
+<a id="the-css-part" class="anchor" href="#the-css-part" aria-hidden="true"><span class="octicon octicon-link"></span></a>The CSS part</h3>
+
+<p>The <a href="src/cookies-monster.css">current file</a> includes an  image, but it doesn't have to. It's just an example of what the script expect.</p>
+
+<p>Be sure you have defined both <code>#cookies-monster</code> and <code>#cookies-monster.hidden</code> behaviors, and feel free to style its optional link element which by default should have  a <code>.cookies-monster-accepted</code> class.</p>
+
+<h3>
+<a id="the-html-part" class="anchor" href="#the-html-part" aria-hidden="true"><span class="octicon octicon-link"></span></a>The HTML part</h3>
+
+<p>It can be anything you want, as long as the container id is <code>cookies-monster</code>. You might need to specify a link to know more: it's up to you and I am not responsible for anything wrong you could write in the element. Just as basic example, this is a generic element.</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>cookies-monster<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>hidden<span class="pl-pds">"</span></span>&gt;
+  This sites uses cookies. &lt;<span class="pl-ent">a</span>
+    <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>cookies-monster-accepted<span class="pl-pds">"</span></span>
+    <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#cookies-monster<span class="pl-pds">"</span></span>
+  &gt;Accept&lt;/<span class="pl-ent">a</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>By default, the element should contain the class <code>hidden</code> plus eventually others.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Cookies-monster maintained by <a href="https://github.com/WebReflection">WebReflection</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
