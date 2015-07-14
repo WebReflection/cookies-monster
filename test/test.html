@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>wru test</title>
+        <meta http-equiv="content-language" content="en-US"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta names="apple-mobile-web-app-status-bar-style" content="black"/>
+        <link rel="styleSheet" href="build/cookies-monster.css">
+        <!--[if lte IE 9]><style>label{display:block !important;}</style><script>(function(f){window.setTimeout=f(window.setTimeout);window.setInterval=f(window.setInterval)})(function(f){return function(c,t){var a=[].slice.call(arguments,2);return f(function(){c.apply(this,a)},t)}});</script><![endif]-->
+        <!--[if IE 8]><script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script><![endif]-->
+        <script>
+        document.cookie = ''.concat(
+          'cookies-monster-accepted=',
+          ';expires=Thu, 01-Jan-1970 00:00:01 GMT',
+          ';path=/',
+          ';domain=.', location.hostname,
+          location.protocol === 'https' ? ';secure' : ''
+        );
+        </script>
+        <script src="build/cookies-monster.js"></script>
+        <style>html { background: #333; }</style>
+    </head>
+    <body>
+      <div id="cookies-monster" class="hidden">
+        This sites uses cookies. <a href="?read-more">Read more</a> or <button
+          class="cookies-monster-accepted"
+          href="#cookies-monster"
+        >Accept</button>
+      </div>
+    </body>
+</html>
