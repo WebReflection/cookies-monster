@@ -50,7 +50,7 @@
         st(drop, delay, el);
       }
     },
-    show = function (evt) {
+    show = function () {
       var el = $(id), a;
       if (document.cookie.indexOf(cookieName) < 0) {
         if (el) {

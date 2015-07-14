@@ -22,6 +22,7 @@ build:
 	make test
 	make hint
 	make size
+	rm build/$(REPO).max.js
 
 # build generic version
 var:
@@ -33,6 +34,8 @@ var:
 	cat template/copyright build/no-copy.$(REPO).js >build/$(REPO).js
 	rm build/no-copy.$(REPO).max.js
 	rm build/no-copy.$(REPO).js
+#	rm build/$(REPO).max.js
+#	rm build/$(REPO).max.css
 
 # build node.js version
 node:
