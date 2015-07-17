@@ -12,6 +12,7 @@
     document = window.document,
     location = window.location,
     st = window.setTimeout,
+    ct = window.clearTimeout,
     delay = 350,
     $ = function (css) {
       return document.querySelector(css);
@@ -27,6 +28,7 @@
     },
     hide = function (evt) {
       var el = $(id), a, d;
+      ct(t);
       if (el) {
         remove(window, MOUSEWHEEL, hide);
         remove(window, SCROLL, hide);
@@ -52,20 +54,25 @@
     },
     show = function () {
       var el = $(id), a;
-      if (document.cookie.indexOf(cookieName) < 0) {
-        if (el) {
-          add(window, MOUSEWHEEL, hide);
-          add(window, SCROLL, hide);
-          a = $(link);
-          if (a) add(a, CLICK, hide);
-          el[CN] = el[CN].replace(HIDDEN, '');
+      if (el) {
+        if (document.cookie.indexOf(cookieName) < 0) {
+          if (el) {
+            t = st(function () {
+              t = 0;
+              add(window, MOUSEWHEEL, hide);
+              add(window, SCROLL, hide);
+            }, delay * 10);
+            a = $(link);
+            if (a) add(a, CLICK, hide);
+            el[CN] = el[CN].replace(HIDDEN, '');
+          }
+        } else {
+          drop(el);
         }
-      } else if (el) {
-        drop(el);
       } else {
-        st(show, delay);
+        t = st(show, delay);
       }
-    }
+    },
+    t = st(show, delay)
   ;
-  st(show, delay);
 }(window, 'cookies-monster'));
