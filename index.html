@@ -1,67 +1,85 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Cookies-monster by WebReflection</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
-  <link rel="stylesheet" href="stylesheets/github-dark.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+  </head>
+  <body>
 
-  <title>Cookies-monster</title>
-  <meta name="description" content="The pointless EU law simplified">
+      <header>
+        <h1>Cookies-monster</h1>
+        <p>The pointless EU law simplified</p>
+      </header>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+      <div id="banner">
+        <span id="logo"></span>
 
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Cookies-monster</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">The pointless EU law simplified</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/WebReflection/cookies-monster/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/WebReflection/cookies-monster/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/WebReflection/cookies-monster" class="code">View Cookies-monster on GitHub</a>
+        <a href="https://github.com/WebReflection/cookies-monster" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/WebReflection/cookies-monster/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/WebReflection/cookies-monster/tarball/master" class="button">TAR</a></li>
+          </ul>
         </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h1>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
 <a id="cookies-monster" class="anchor" href="#cookies-monster" aria-hidden="true"><span class="octicon octicon-link"></span></a>cookies-monster</h1>
 
 <p><a href="http://travis-ci.org/WebReflection/cookies-monster"><img src="https://secure.travis-ci.org/WebReflection/cookies-monster.png" alt="build status"></a></p>
 
 <h1>
-<a id="simplified-html-css-js-eu-cookie-law" class="anchor" href="#simplified-html-css-js-eu-cookie-law" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simplified HTML, CSS, JS EU Cookie Law</h1>
+<a id="a-simplified-eu-cookie-law-approach" class="anchor" href="#a-simplified-eu-cookie-law-approach" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Simplified EU Cookie Law Approach</h1>
+
+<p>The aim of this project is to simplify through an agnostic, drop in based approach, the handling of the infamous EU Cookie banner.
+Supporting separation of concerns, this project offers an extremely compact and widely compatible JavaScript logic
+which will take care of:</p>
+
+<ul>
+<li>showing the banner only if the user has not accepted it explicitly</li>
+<li>disappearing on scroll automatically after at least 3 seconds</li>
+<li>adding and removing CSS classes to give Web Developers full style-ability</li>
+<li>cookie for a year, renewed each time ( forever accepted )</li>
+</ul>
+
+<p>Following an example on how to use files provided in the <a href="build/">./build</a> folder.</p>
 
 <h3>
 <a id="the-js-part" class="anchor" href="#the-js-part" aria-hidden="true"><span class="octicon octicon-link"></span></a>The JS part</h3>
 
 <p>Whenever a user clicks <code>Accept</code>, the banner disappears for a year and for the whole domain.</p>
 
-<p>It also disappears as soon as the user scrolls the page but it will be shown until the user made an explicit choice.</p>
+<p>It also disappears, after about 3 seconds, as soon as the user scrolls the page.
+However, in latter case, it will be shown next time, unless the user made an explicit choice through the <code>Accept</code> button.</p>
 
 <h3>
 <a id="the-css-part" class="anchor" href="#the-css-part" aria-hidden="true"><span class="octicon octicon-link"></span></a>The CSS part</h3>
 
-<p>The <a href="src/cookies-monster.css">current file</a> includes an  image, but it doesn't have to. It's just an example of what the script expect.</p>
-
-<p>Be sure you have defined both <code>#cookies-monster</code> and <code>#cookies-monster.hidden</code> behaviors, and feel free to style its optional link element which by default should have  a <code>.cookies-monster-accepted</code> class.</p>
+<p>The <a href="src/cookies-monster.css">current file</a> is just an example of how such banner could be styled.
+Be sure you have defined both <code>#cookies-monster</code> and <code>#cookies-monster.hidden</code> behaviors, and feel free to style its optional link element which by default should have  a <code>.cookies-monster-accepted</code> class.</p>
 
 <h3>
 <a id="the-html-part" class="anchor" href="#the-html-part" aria-hidden="true"><span class="octicon octicon-link"></span></a>The HTML part</h3>
 
-<p>It can be anything you want, as long as the container id is <code>cookies-monster</code>. You might need to specify a link to know more: it's up to you and I am not responsible for anything wrong you could write in the element. Just as basic example, this is a generic element.</p>
+<p>It can be anything you want, as long as the container id is <code>cookies-monster</code>. You might need to specify a link to know more.
+Please be sure what you provide is useful and meaningful enough, accordingly with the law expectations.
+Just as basic example, this is a generic element.</p>
 
 <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>cookies-monster<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>hidden<span class="pl-pds">"</span></span>&gt;
   This sites uses cookies. &lt;<span class="pl-ent">a</span>
@@ -71,6 +89,31 @@
 &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
 <p>By default, the element should contain the class <code>hidden</code> plus eventually others.</p>
+
+<p><strong>Please note</strong> that if an element with class <code>.cookies-monster-accepted</code> is present, this will be used to set the cookie once clicked.</p>
+
+<h3>
+<a id="how-to" class="anchor" href="#how-to" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To</h3>
+
+<p>Following is the most basic layout you need. The script is not obtrusive and it can work within any layout already in production.</p>
+
+<div class="highlight highlight-html"><pre>&lt;!DOCTYPE html&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+  &lt;<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>styleSheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>build/cookies-monster.css<span class="pl-pds">"</span></span>&gt;
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">async</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>build/cookies-monster.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+  &lt;/<span class="pl-ent">head</span>&gt;
+  &lt;<span class="pl-ent">body</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>cookies-monster<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>hidden<span class="pl-pds">"</span></span>&gt;
+      This sites uses cookies. &lt;<span class="pl-ent">a</span>
+        <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>cookies-monster-accepted<span class="pl-pds">"</span></span>
+        <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#cookies-monster<span class="pl-pds">"</span></span>
+      &gt;Accept&lt;/<span class="pl-ent">a</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;
+  &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+
+<p>You can see a <a href="http://webreflection.github.io/cookies-monster/test/test.html">live working example here</a></p>
 
 <h3>
 <a id="compatibility" class="anchor" href="#compatibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compatibility</h3>
@@ -82,26 +125,13 @@ If you want to support IE9 and/or eventually IE8 too, use these comments on top 
 <span class="pl-c">&lt;!--[if IE 8]&gt;&lt;script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;</span></pre></div>
 
 <p>After that you can include the script either deferred or async or however you like.</p>
-        </article>
-      </div>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/WebReflection">WebReflection</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/WebReflection" class="avatar"><img src="https://avatars2.githubusercontent.com/u/85749?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/WebReflection">WebReflection</a> maintains <a href="https://github.com/WebReflection/cookies-monster">Cookies-monster</a></p>
-
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/WebReflection/cookies-monster/tarball/master" class="tar">tar</a><a href="https://github.com/WebReflection/cookies-monster/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  
-</body>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
 </html>
