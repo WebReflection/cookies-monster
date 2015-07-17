@@ -77,6 +77,7 @@ Following is the most basic layout you need. The script is not obtrusive and it 
 </html>
 ```
 
+You can see a [live working example here](http://webreflection.github.io/cookies-monster/test/test.html)
 
 
 
