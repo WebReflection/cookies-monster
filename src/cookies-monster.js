@@ -27,30 +27,32 @@
       el.parentNode.removeChild(el);
     },
     hide = function (evt) {
-      var el = $(id), a, d;
+      var el = $(id);
       ct(t);
       if (el) {
         remove(window, MOUSEWHEEL, hide);
         remove(window, SCROLL, hide);
-        a = $(link);
-        if (a) {
-          if (evt.type === CLICK) {
-            evt.preventDefault();
-            d = new Date();
-            d.setFullYear(d.getFullYear() + 1);
-            document.cookie = ''.concat(
-              cookieName, '=1',
-              ';expires=', d.toGMTString(),
-              ';path=/',
-              ';domain=.', location.hostname,
-              location.protocol === 'https' ? ';secure' : ''
-            );
-          }
-          remove(a, CLICK, hide);
-        }
         el[CN] += ' ' + HIDDEN;
         st(drop, delay, el);
+        el = $(link);
+        if (el) {
+          if (evt.type === CLICK) {
+            set(evt.preventDefault());
+          }
+          remove(el, CLICK, hide);
+        }
       }
+    },
+    set = function () {
+      var d = new Date();
+      d.setFullYear(d.getFullYear() + 1);
+      document.cookie = ''.concat(
+        cookieName, '=1',
+        ';expires=', d.toGMTString(),
+        ';path=/',
+        ';domain=.', location.hostname,
+        location.protocol === 'https' ? ';secure' : ''
+      );
     },
     show = function () {
       var el = $(id), a;
@@ -67,7 +69,7 @@
             el[CN] = el[CN].replace(HIDDEN, '');
           }
         } else {
-          drop(el);
+          set(drop(el));
         }
       } else {
         t = st(show, delay);

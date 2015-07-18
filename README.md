@@ -63,8 +63,10 @@ Following is the most basic layout you need. The script is not obtrusive and it 
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="styleSheet" href="build/cookies-monster.css">
-    <script async src="build/cookies-monster.js"></script>
+    <link rel="styleSheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/cookies-monster/0.1.2/cookies-monster.css">
+    <script async
+      src="//cdnjs.cloudflare.com/ajax/libs/cookies-monster/0.1.2/cookies-monster.js"></script>
   </head>
   <body>
     <div id="cookies-monster" class="hidden">
@@ -78,6 +80,8 @@ Following is the most basic layout you need. The script is not obtrusive and it 
 ```
 
 You can see a [live working example here](http://webreflection.github.io/cookies-monster/test/test.html)
+
+Finally, a mandatory **special thanks to [cdnjs](https://cdnjs.com/)** for hosting this little js and css script.
 
 
 
