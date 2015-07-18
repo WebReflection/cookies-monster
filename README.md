@@ -85,6 +85,12 @@ Finally, a mandatory **special thanks to [cdnjs](https://cdnjs.com/)** for hosti
 
 
 
+### License
+
+This project comes with a [WTFPL License](http://www.wtfpl.net/).
+
+
+
 ### Compatibility
 
 The script is compatible with every Mobile and Desktop browser.
