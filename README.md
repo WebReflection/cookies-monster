@@ -1,7 +1,7 @@
 cookies-monster
 ===============
 
-[![build status](https://secure.travis-ci.org/WebReflection/cookies-monster.png)](http://travis-ci.org/WebReflection/cookies-monster)
+[![build status](https://secure.travis-ci.org/WebReflection/cookies-monster.svg)](http://travis-ci.org/WebReflection/cookies-monster)
 
 # A Simplified EU Cookie Law Approach
 
