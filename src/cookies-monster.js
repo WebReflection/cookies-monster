@@ -55,7 +55,7 @@
       );
     },
     show = function () {
-      var el = $(id), a;
+      var el = $(id);
       if (el) {
         if (document.cookie.indexOf(cookieName) < 0) {
           if (el) {
@@ -64,9 +64,11 @@
               add(window, MOUSEWHEEL, hide);
               add(window, SCROLL, hide);
             }, delay * 10);
-            a = $(link);
-            if (a) add(a, CLICK, hide);
             el[CN] = el[CN].replace(HIDDEN, '');
+            el = $(link);
+            if (el) {
+              add(el, CLICK, hide);
+            }
           }
         } else {
           set(drop(el));
