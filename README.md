@@ -64,9 +64,9 @@ Following is the most basic layout you need. The script is not obtrusive and it 
 <html>
   <head>
     <link rel="styleSheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/cookies-monster/0.1.2/cookies-monster.css">
+      href="//cdnjs.cloudflare.com/ajax/libs/cookies-monster/0.1.3/cookies-monster.css">
     <script async
-      src="//cdnjs.cloudflare.com/ajax/libs/cookies-monster/0.1.2/cookies-monster.js"></script>
+      src="//cdnjs.cloudflare.com/ajax/libs/cookies-monster/0.1.3/cookies-monster.js"></script>
   </head>
   <body>
     <div id="cookies-monster" class="hidden">
