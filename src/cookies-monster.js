@@ -58,17 +58,15 @@
       var el = $(id);
       if (el) {
         if (document.cookie.indexOf(cookieName) < 0) {
+          t = st(function () {
+            t = 0;
+            add(window, MOUSEWHEEL, hide);
+            add(window, SCROLL, hide);
+          }, delay * 10);
+          el[CN] = el[CN].replace(HIDDEN, '');
+          el = $(link);
           if (el) {
-            t = st(function () {
-              t = 0;
-              add(window, MOUSEWHEEL, hide);
-              add(window, SCROLL, hide);
-            }, delay * 10);
-            el[CN] = el[CN].replace(HIDDEN, '');
-            el = $(link);
-            if (el) {
-              add(el, CLICK, hide);
-            }
+            add(el, CLICK, hide);
           }
         } else {
           set(drop(el));
